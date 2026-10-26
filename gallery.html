@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图提取 ImageGrab - 图片画廊</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <header class="ig-toolbar">
+    <div class="ig-toolbar-left">
+      <h1 class="ig-title">图提取 <span>ImageGrab</span></h1>
+      <span class="ig-count" id="ig-count">共 0 张，已选 0 张</span>
+    </div>
+    <div class="ig-toolbar-right">
+      <button class="ig-btn" id="ig-select-all">全选</button>
+      <button class="ig-btn" id="ig-select-invert">反选</button>
+      <button class="ig-btn ig-btn-primary" id="ig-download-png">下载选中 (PNG)</button>
+      <button class="ig-btn ig-btn-ghost" id="ig-download-zip">打包下载 (ZIP)</button>
+      <button class="ig-btn ig-btn-ghost" id="ig-back">返回页面</button>
+    </div>
+  </header>
+
+  <main class="ig-grid" id="ig-grid"></main>
+
+  <div class="ig-empty" id="ig-empty" hidden>
+    <p>没有提取到图片。</p>
+    <p class="ig-empty-sub">请回到商品详情页，点击右下角「获取图片」按钮重新提取。</p>
+  </div>
+
+  <div class="ig-progress" id="ig-progress" hidden>
+    <div class="ig-progress-text" id="ig-progress-text">准备中…</div>
+    <div class="ig-progress-bar"><div class="ig-progress-fill" id="ig-progress-fill"></div></div>
+  </div>
+
+  <div class="ig-toast" id="ig-toast" hidden></div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
